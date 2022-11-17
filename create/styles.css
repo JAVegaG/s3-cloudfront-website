@@ -142,37 +142,11 @@ input[type=text] {
     border-color: #a9a0fd;
 }
 
-#type_selector {
-    text-align: center;
-    width: 10rem;
-    font-size: 1.5rem;
-    font-weight: bold;
-    padding: 0.75rem 0.5rem;
-    margin: 0.5rem 0;
-    color: #FFFFFF;
-    background-color: #6b4df3;
-    border: 0.25rem outset #6b4df3;
-    border-radius: 1rem;
-}
-
-#type_selector:hover,
-#type_selector:active {
-    background-color: #6b4df3;
-    border-color: #a9a0fd;
-}
-
-#type_selector>option {
-    background-color: #FFFFFF;
-    color: #6b4df3;
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
 #submit_div {
     display: flex;
     justify-content: center;
 }
 
 #create_record {
-    width: 40rem;
+    width: 30rem;
 }

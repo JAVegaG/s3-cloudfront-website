@@ -1,6 +1,5 @@
 const keyDiv = document.getElementById('key_div');
 const valueDiv = document.getElementById('value_div');
-const typeSelector = document.getElementById('type_selector');
 const resultBody = document.getElementById('result');
 
 const addFieldButton = document.getElementById('add_field');
@@ -15,20 +14,18 @@ createNewRecord.addEventListener('click', createRecord);
 
 function addField() {
 
-    const childrenIndex = typeSelector.selectedIndex
-    const newType = typeSelector.children.item(childrenIndex).getAttribute('value')
+    if (keyDiv.childElementCount < 5) {
 
-    const newKey = document.createElement('input');
-    const newValue = document.createElement('input');
+        const newKey = document.createElement('input');
+        const newValue = document.createElement('input');
 
-    newKey.setAttribute('type', 'text');
-    newKey.setAttribute('required', '');
+        newKey.setAttribute('type', 'text');
 
-    newValue.setAttribute('type', newType.toString())
-    newValue.setAttribute('required', '');
+        newValue.setAttribute('type', 'text')
 
-    keyDiv.appendChild(newKey);
-    valueDiv.appendChild(newValue);
+        keyDiv.appendChild(newKey);
+        valueDiv.appendChild(newValue);
+    }
 
 }
 

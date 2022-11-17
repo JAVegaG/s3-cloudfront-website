@@ -60,8 +60,9 @@
             <p>
                 Since DynamoDB is a NoSQL database, one is not bound by a particular structure when creating a new
                 record. However, DynamoDB is a key-value database and since it requires a partition key, any item must
-                have it. In this particular case, the partition key is an id. To add a field, click the plus sign and to
-                remove a field, click the minus sign.
+                have it. In this particular case, the partition key is an id. All possible fields configured are:
+                "author", "description", and "title". To add a field, click the plus sign and to remove a field, click
+                the minus sign.
             </p>
         </div>
         <div id="form_div">
@@ -80,10 +81,6 @@
         </div>
         <div id="buttons_div">
             <button class="control_button" id="remove_field">-</button>
-            <select id="type_selector">
-                <option value="text">String</option>
-                <option value="number">Number</option>
-            </select>
             <button class="control_button" id="add_field">+</button>
         </div>
         <div id="submit_div">
