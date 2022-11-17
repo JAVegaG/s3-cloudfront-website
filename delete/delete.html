@@ -53,32 +53,25 @@
         </div>
     </div>
     <div id="section">
-        <div id="arch_img">
-            <img src="./img/basic_arch.svg" alt="System's Architecture">
-        </div>
         <div id="body_content">
             <h2>
-                Introduction
+                Delete Record
             </h2>
             <p>
-                This Dashboard was designed as a Graphic User Interface to implement CRUD operations over an AWS
-                DynamoDB Table. The DynamoDB Table itself is accessed through Lambda functions that are triggered by an
-                API Gateway petition. The table name, the URL to directly interact with the API, and the explanation of
-                how the infrastructure was implemented can be found in <a
-                    href="https://github.com/JAVegaG/terraform-aws" class="body_link">JAVegaG/terraform-aws</a>. On the
-                other hand, the explanation of how the code of the lambdas is updated can be found in <a
-                    href="https://github.com/JAVegaG/aws-lambdas" class="body_link">JAVegaG/aws-lambdas</a>.
+                For this operation, one must provide the id that one wants to delete.
             </p>
-            <h2>
-                Operations
-            </h2>
-            <p>
-                As stated above, this GUI is supposed to work as a control panel for the main and basic operations of
-                persistent storage, i.e. create a new record, read all records, read, update and delete a specific
-                record based on a primary key, provided to the operation. Notice that each link on the menu bar is one
-                of the previously mentioned procedures, so to get started just go ahead and press the one that you would
-                like to try.
-            </p>
+        </div>
+        <div id="select_div">
+            <h2 id="select_title">Select ID</h2>
+            <input type="number" id="id_value" min=1 placeholder="Select ID">
+        </div>
+        <div id="result_div">
+            <h2>Result</h2>
+            <p id="result"></p>
+            <div id="table"></div>
+        </div>
+        <div id="submit_div">
+            <button class="control_button" id="delete_record">Delete</button>
         </div>
     </div>
     <script src="./app.js"></script>
