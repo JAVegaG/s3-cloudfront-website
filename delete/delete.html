@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataBase Dashboard</title>
+
+    <script src="https://kit.fontawesome.com/9dbda1f0aa.js" crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <div id="header">
+        <div id="logo">
+            <h1>
+                <i class="fa-solid fa-database"></i> DataBase Dashboard
+            </h1>
+        </div>
+        <div id="menu">
+            <div class="menu_item">
+                <a href="../index.html" class="menu_link">
+                    Home
+                </a>
+            </div>
+            <div class="menu_item">
+                <a href="../create/create.html" class="menu_link">
+                    Create
+                </a>
+            </div>
+            <div class="menu_item">
+                <a href="../read/read.html" class="menu_link">
+                    Read
+                </a>
+            </div>
+            <div class="menu_item">
+                <a href="../update/update.html" class="menu_link">
+                    Update
+                </a>
+            </div>
+            <div class="menu_item">
+                <a href="./delete.html" class="menu_link">
+                    Delete
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="section">
+        <div id="arch_img">
+            <img src="./img/basic_arch.svg" alt="System's Architecture">
+        </div>
+        <div id="body_content">
+            <h2>
+                Introduction
+            </h2>
+            <p>
+                This Dashboard was designed as a Graphic User Interface to implement CRUD operations over an AWS
+                DynamoDB Table. The DynamoDB Table itself is accessed through Lambda functions that are triggered by an
+                API Gateway petition. The table name, the URL to directly interact with the API, and the explanation of
+                how the infrastructure was implemented can be found in <a
+                    href="https://github.com/JAVegaG/terraform-aws" class="body_link">JAVegaG/terraform-aws</a>. On the
+                other hand, the explanation of how the code of the lambdas is updated can be found in <a
+                    href="https://github.com/JAVegaG/aws-lambdas" class="body_link">JAVegaG/aws-lambdas</a>.
+            </p>
+            <h2>
+                Operations
+            </h2>
+            <p>
+                As stated above, this GUI is supposed to work as a control panel for the main and basic operations of
+                persistent storage, i.e. create a new record, read all records, read, update and delete a specific
+                record based on a primary key, provided to the operation. Notice that each link on the menu bar is one
+                of the previously mentioned procedures, so to get started just go ahead and press the one that you would
+                like to try.
+            </p>
+        </div>
+    </div>
+    <script src="./app.js"></script>
+
+</body>
+
+</html>
