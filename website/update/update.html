@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataBase Dashboard</title>
+
+    <script src="https://kit.fontawesome.com/9dbda1f0aa.js" crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <div id="header">
+        <div id="logo">
+            <h1>
+                <i class="fa-solid fa-database"></i> DataBase Dashboard
+            </h1>
+        </div>
+        <div id="menu">
+            <div class="menu_item">
+                <a href="../index.html" class="menu_link">
+                    Home
+                </a>
+            </div>
+            <div class="menu_item">
+                <a href="../create/create.html" class="menu_link">
+                    Create
+                </a>
+            </div>
+            <div class="menu_item">
+                <a href="../read/read.html" class="menu_link">
+                    Read
+                </a>
+            </div>
+            <div class="menu_item">
+                <a href="./update.html" class="menu_link">
+                    Update
+                </a>
+            </div>
+            <div class="menu_item">
+                <a href="../delete/delete.html" class="menu_link">
+                    Delete
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="section">
+        <div id="body_content">
+            <h2>
+                Update Record
+            </h2>
+            <p>
+                For this operation, one must provide the id that one wants to update, the new value of the corresponding
+                key along with the existing ones, because in this particular case the API is set to update all the
+                existing parameters available, i.e, "author", "description", and "title".
+            </p>
+        </div>
+        <div id="select_div">
+            <h2 id="select_title">Select ID</h2>
+            <input type="number" id="id_value" min=1 placeholder="Select ID">
+        </div>
+        <div id="form_div">
+            <div id="key_div">
+                <h3>KEY</h3>
+                <input type="text" id="keys">
+            </div>
+            <div id="value_div">
+                <h3>VALUE</h3>
+                <input type="text" id="values" min=1 placeholder="something">
+            </div>
+        </div>
+        <div id="result_div">
+            <h2>Result</h2>
+            <p id="result"></p>
+        </div>
+        <div id="buttons_div">
+            <button class="control_button" id="remove_field">-</button>
+            <button class="control_button" id="add_field">+</button>
+        </div>
+        <div id="submit_div">
+            <button class="control_button" id="update_record">Update</button>
+        </div>
+    </div>
+    <script src="./app.js"></script>
+
+</body>
+
+</html>

@@ -1,40 +1,3 @@
-# AWS Static Website S3 - CloudFront
-
-The goal of this repository is to automate the process of adding the website files placed on an AWS Simple Storage Service (S3) Bucket through a GitHub action workflow.
-
-## Architecture
-
-The system's architecture is implemented on [AWS Cloud](https://aws.amazon.com/?nc1=h_ls) and consists of the following resources:
-
-* 2 AWS Lambdas
-* 2 CloudWatch Log groups
-* 1 DynamoDB
-* 1 API Gateway 
-* 1 S3 Bucket
-* 1 CloudFront Distribution
-
-<div align=Center>
-    <img
-        alt="Application architecture"
-        src="images/arch.svg"
-    >
-</div>
-
-## Pipeline to Add Files to S3 bucket
-
-The GitHub Actions workflow shown below is used to add file to the S3 bucket:
-
-<div>
-    <img
-        alt="GitHub Action worflow"
-        src="images/workflow.jpg"
-        style=border-radius:4rem;
-    >
-</div>
-
-A GitHub context-based condition has been implemented to select which s3 bucket to select, i.e. those in production or those in development. This is achieved through the following [workflow](.github/workflows/s3.yml):
-
-```
 name: Add files to AWS s3
 
 run-name: ${{ github.actor }} is updating files to AWS s3 🚀
@@ -82,7 +45,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       WORKSPACE: ${{ needs.select-workspace.outputs.workspace }}
-      S3_ID: 7807016451756110004 # Develop S3 id
+      S3_ID: '7807016451756110004' # Develop S3 id
       DEV_URL: https://c9dlxhvnce.execute-api.us-east-1.amazonaws.com/develop
 
     
@@ -116,7 +79,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       WORKSPACE: ${{ needs.select-workspace.outputs.workspace }}
-      S3_ID: 14800714847457006855 # production S3 id
+      S3_ID: '14800714847457006855' # production S3 id
     
     steps:
 
@@ -132,4 +95,3 @@ jobs:
 
       - name: Sync s3 files
         run: cd website && aws s3 sync . "s3://website-bucket-$AWS_REGION-$WORKSPACE-$S3_ID"
-```
