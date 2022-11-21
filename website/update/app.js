@@ -54,6 +54,17 @@ async function updateRecord() {
         return
     }
 
+    const valueArray = [valueDiv.children.item(1).value, valueDiv.children.item(2).value, valueDiv.children.item(3).value]
+    const keyArray = [keyDiv.children.item(1).value, keyDiv.children.item(2).value, keyDiv.children.item(3).value]
+
+    if (keyArray.every(item => item.length === 0)) {
+        resultBody.innerHTML = 'All keys must be filled'
+    }
+
+    if (valueArray.every(item => item.length === 0)) {
+        resultBody.innerHTML = 'All values must be filled'
+    }
+
     for (let i = 1; i < keyDiv.childElementCount; i++) {
 
         const newValue = valueDiv.children.item(i);
