@@ -45,7 +45,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       WORKSPACE: ${{ needs.select-workspace.outputs.workspace }}
-      S3_ID: 7807016451756110004 # Develop S3 id
+      S3_ID: '7807016451756110004' # Develop S3 id
       DEV_URL: https://c9dlxhvnce.execute-api.us-east-1.amazonaws.com/develop
 
     
@@ -79,7 +79,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       WORKSPACE: ${{ needs.select-workspace.outputs.workspace }}
-      S3_ID: 14800714847457006855 # production S3 id
+      S3_ID: '14800714847457006855' # production S3 id
     
     steps:
 
